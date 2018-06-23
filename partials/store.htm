@@ -1,0 +1,36 @@
+﻿<p class="text-info"> Welcome to the Angular Application.<br />
+</p>
+<p> Search:
+  <input ng-model="search">
+</p>
+<table class="table table-bordered">
+  <!-- <tr class="well">
+        <td class="tdRight" colspan="4" >
+            <a href="default.htm#/cart" title="go to  cart" ng-disabled="cart.getTotalCount() < 1">
+                <i class="icon-shopping-cart" />
+               <!-- <b>{{cart.getTotalCount()}}</b> items, <b>{{cart.getTotalPrice() | currency}}</b> 
+            </a>
+        </td>
+    </tr>-->
+  <tr ng-repeat="recr in pdata | orderBy:'login' | filter:search"  >
+    <td class="tdCenter"><img ng-src="{{recr.avatar_url}}" alt="{{recr.login}}" width="50" /></td>
+    <td><a href="#/products/{{recr.login}}"><b>{{recr.login}}</b></a><br />
+      {{recr.description}} </td>
+    <!-- <td class="tdRight">
+            {{recr.price | currency}}
+        </td>
+       <td class="tdCenter">
+            <a href="" ng-click="cart.addItem(recr.sku, recr.name, recr.price, 1)">
+                add to cart
+            </a>
+        </td>--> 
+  </tr>
+  <!--<tr class="well">
+        <td class="tdRight" colspan="4">
+            <a href="default.htm#/cart" title="go to  cart" ng-disabled="cart.getTotalCount() < 1">
+                <i class="icon-shopping-cart" />
+                <b>{{cart.getTotalCount()}}</b> items, <b>{{cart.getTotalPrice() | currency}}</b>
+            </a>
+        </td>
+    </tr>-->
+</table>
